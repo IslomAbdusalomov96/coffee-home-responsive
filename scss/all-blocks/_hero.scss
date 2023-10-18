@@ -1,0 +1,105 @@
+.hero {
+    padding-bottom: 136px;
+    &__container {
+        max-width: 1280px;
+        padding: 117px 85px 116px;
+        background-image: url("../images/Coffee-home-hero.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 1280px 600px;
+        border-radius: 10px;
+    }
+    &__left {
+        width: 100%;
+        max-width: 493px;
+    }
+    &__title {
+        margin-bottom: 32px;
+        color: $main-color;
+        font-size: 72px;
+        line-height: 72px;
+    }
+    &__desc {
+        margin-bottom: 56px;
+        width: 100%;
+        max-width: 444px;
+        color: $main-color;
+        font-family: 'Barlow';
+        line-height: 26px;
+        opacity: 0.8;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .hero {
+        padding: 0 40px 144px 39px;
+        width: 100%;
+        &__container {
+            padding: 104px 58px;
+            width: 100%;
+            background-image: url("../images/Coffee-home-hero-responsive.jpg");
+            background-size: 689px 500px;
+        }
+        &__title {
+            margin-bottom: 24px;
+            font-size: 48px;
+            line-height: 48px;
+        }
+        &__desc {
+            margin-bottom: 40px;
+            width: 100%;
+            font-size: 15px;
+            line-height: 25px;
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .hero {
+        padding: 0 24px 120px;
+        &__container {
+            padding: 100px 24px 99px;
+            text-align: center;
+            background-image: url("../images/coffee-home-hero-mobile.jpg");
+            background-size: 327px 500px;
+        }
+        &__left {
+            max-width: 279px;
+        }
+        &__title {
+            max-width: 279px;
+            font-size: 40px;
+            line-height: 40px;
+        }
+        &__desc {
+            margin-bottom: 39px;
+            max-width: 279px;
+        }
+        &__bottom {
+            text-align: center;
+        }
+    }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+    /* Load high-resolution image */
+    .hero__container {
+        background-image: url("../images/Coffee-home-hero@2x.jpg");
+    }
+    @media only screen and (max-width: 768px) {
+        .hero__container {
+            background-image: url("../images/Coffee-home-hero-responsive@2x.jpg");
+        }
+    }
+    @media only screen and (max-width: 375px) {
+        .hero__container {
+            background-image: url("../images/coffee-home-hero-mobile@2x.jpg");
+        }
+    }
+}
