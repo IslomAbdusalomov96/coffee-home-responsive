@@ -360,6 +360,7 @@ body {
   flex-direction: column;
   height: 100%;
   margin: 0;
+  margin-top: 113px;
   padding: 0;
   font-family: "Fraunces";
   background-color: #FEFCF7;
@@ -397,8 +398,16 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+  body {
+    margin-top: 119px;
+  }
   .btn {
     background-color: #0E8784;
+  }
+}
+@media only screen and (max-width: 375px) {
+  body {
+    margin-top: 92px;
   }
 }
 .visually-hidden {
@@ -420,6 +429,10 @@ a {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   padding: 44px 0 43px;
   background-color: #FEFCF7;
   z-index: 10;

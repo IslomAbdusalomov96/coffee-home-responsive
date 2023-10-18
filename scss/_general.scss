@@ -13,7 +13,7 @@ body {
     flex-direction: column;
     height: 100%;
     margin: 0;
-    // margin-top: 116px;
+    margin-top: 113px;
     padding: 0;
     font-family: 'Fraunces';
     background-color: $main-color;
@@ -46,7 +46,15 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+    body {
+        margin-top: 119px;
+    }
     .btn {
         background-color: $box-color;
+    }
+}
+@media only screen and (max-width: 375px) {
+    body {
+        margin-top: 92px;
     }
 }
