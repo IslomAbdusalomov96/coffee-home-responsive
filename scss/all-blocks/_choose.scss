@@ -2,10 +2,16 @@
     padding-bottom: 351px;
     &__container {
         position: relative;
-        padding-top: 100px;
-        padding-bottom: 317px;
+        padding: 100px 0 317px;
+        width: 100%;
+        max-width: 1280px;
         border-radius: 10px;
         background-color: $choose-footer-color;
+    }
+    &__top {
+        width: 100%;
+        max-width: 540px;
+        margin: 0 auto;
     }
     &__title {
         margin-bottom: 32px;
@@ -15,9 +21,6 @@
         line-height: 48px;
     }
     &__desc {
-        max-width: 529px;
-        margin: 0 auto;
-        margin-bottom: 86px;
         text-align: center;
         color: $main-color;
         font-family: 'Barlow';
@@ -27,32 +30,44 @@
     &__list {
         position: absolute;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        padding: 0 85px;
+        bottom: 0;
+        left: 0;
         width: 100%;
-        max-width: 1280px;
-        bottom: -151px;
+        max-width: 100%;
+        transform: translateY(151px);
     }
     &__item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         max-width: 350px;
         padding: 72px 48px 48px 47px;
         text-align: center;
         border-radius: 8px;
         background-color: $box-color;
     }
-    &__item + &__item {
-        margin-left: 30px;
-    }
     &__item:last-child {
         padding-top: 83px;
     }
-    &__img {
-        max-width: 72px;
+    &__item::before {
+        content: '';
+        flex-shrink: 0;
+        width: 72px;
         height: 72px;
+        margin: 0 auto;
         margin-bottom: 56px;
+        background-image: url("../images/coffee-bean.png");
+        background-repeat: no-repeat;
     }
-    &__item:last-child &__img {
-        height: 50px;
+    &__item:nth-child(2)::before {
+        background-image: url('../images/Coffee-gift.png');
+    }
+    &__item:nth-child(3)::before {
         margin-bottom: 67px;
+        height: 50px;
+        background-image: url('../images/Coffee-Delivery.png');
     }
     &__item-title {
         margin-bottom: 24px;
@@ -67,55 +82,54 @@
     }
 }
 
-@media only screen and  (max-width: 768px) {
+@media only screen and  (max-width: 1240px) {
     .choose {
         padding: 0 40px 434px;
         width: 100%;
         &__container {
-            padding: 56px 74px 368px;
+            padding: 56px 57px 368px;
             width: 100%;
         }
         &__title {
             margin-bottom: 24px;
             font-size: 32px;
         }
-        &__desc {
-            margin-bottom: 0;
-            max-width: 540px;   
+        &__desc { 
             line-height: 25px;
         }
         &__list {
-            max-width: 573px;
             flex-direction: column;
-            bottom: -294px;
-            left: 57px;
+            padding: 0 57px;
+            transform: translateY(50%);
         }
         &__item {
-            display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            flex-direction: row;
             margin: 0;
             padding: 41px 48px 41px 70px;
-            max-width: 573px;
+            max-width: 100%;
         }
-        &__item + &__item {
-            margin: 0;
-            margin-top: 24px;
+        &__item:not(:last-child) {
+            margin-bottom: 24px;
         }
-        &__item:last-child {
+        &__item:nth-child(3) {
             padding: 41px 48px 41px 70px;
         }
-        &__img {
+        &__item::before {
             margin: 0;
-            max-width: 56px;
+            width: 56px;
             height: 56px;
+            background-size: contain;
         }
-        &__item:last-child &__img {
+        &__item:nth-child(3)::before {
             margin: 0;
-            max-width: 55px;
+            width: 55px;
             height: 39px;
         }
         &__item-texts {
+            width: 100%;
+            max-width: 344px;
             text-align: left;
             margin-left: 55px;
         }
@@ -123,14 +137,13 @@
             margin-bottom: 16px;
         }
         &__item-desc {
-            max-width: 344px;
             font-size: 15px;
             line-height: 25px;
         }
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 616px) {
     .choose {
         padding: 0 24px 717px;
         width: 100%;
@@ -138,19 +151,20 @@
             padding: 64px 24px 661px;
             width: 100%;
         }
+        &__top {
+            width: 100%;
+            max-width: 279px;
+        }
         &__title {
             font-size: 28px;
             line-height: 28px;
         }
         &__desc {
-            max-width: 279px;
             font-size: 15px;
         }
         &__list {
             padding: 0 24px;
             width: 100%;
-            bottom: -597px;
-            left: 0;
         }
         &__item {
             padding: 72px 12px 48px;
@@ -164,17 +178,18 @@
         &__item:last-child {
             padding: 83px 12px 48px;
         }
-        &__img {
-            max-width: 72px;
+        &__item::before {
+            width: 72px;
             height: 72px;
             margin-bottom: 56px;
         }
-        &__item:last-child &__img {
-            max-width: 72px;
+        &__item:nth-child(3)::before {
+            width: 72px;
             height: 50px;
             margin-bottom: 67px;
         }
         &__item-texts {
+            max-width: 255px;
             text-align: center;
             margin: 0;
         }
@@ -182,9 +197,30 @@
             margin-bottom: 24px;
         }
         &__item-desc {
+            margin: 0 auto;
+            width: 100%;
             max-width: 212px;
             font-size: 16px;
             line-height: 26px;
         }
+    }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+    /* Load high-resolution image */
+    .choose__item::before {
+        background-image: url('../images/coffee-bean@2x.png');
+    }
+    .choose__item:nth-child(2)::before {
+        background-image: url('../images/Coffee-gift@2x.png');
+    }
+    .choose__item:nth-child(3)::before {
+        background-image: url('../images/Coffee-Delivery@2x.png');
     }
 }
